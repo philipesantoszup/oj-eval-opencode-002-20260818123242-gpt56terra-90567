@@ -19,8 +19,19 @@
 
 namespace sjtu {
 class int2048 {
-  // todo
-public:
+  static const unsigned base = 10000;
+  std::vector<unsigned> digit;
+  bool negative;
+
+  void trim();
+  int abs_compare(const int2048 &) const;
+  static int2048 abs_add(const int2048 &, const int2048 &);
+  static int2048 abs_sub(const int2048 &, const int2048 &);
+  static int2048 abs_multiply(const int2048 &, const int2048 &);
+  static int2048 abs_divide(const int2048 &, const int2048 &);
+  void multiply_unsigned(unsigned);
+  void add_unsigned(unsigned);
+ public:
   // Constructors
   int2048();
   int2048(long long);
